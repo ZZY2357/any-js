@@ -9,7 +9,11 @@ window.onload = () => {
         },
         methods: {
             changeUrl: function() {
-                app.url = location.origin + '/generator/#' + escape(app.codes);
+                app.url =
+                    location.origin +
+                    location.pathname +
+                    'generator/#' +
+                    escape(app.codes);
             },
             makeQrCode: function() {
                 let qr = qrcode(0, 'L');
