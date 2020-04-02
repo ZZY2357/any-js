@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Any JS</title>
+
+        <link href="./lib/bulma.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./style.css">
+
+        <script src="./lib/vue.js"></script>
+        <script src="./lib/qrcode.min.js"></script>
+        <script src="./script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1 class="title">Any JS</h1>
+            </header>
+            <main>
+                <div id="app">
+                    <textarea
+                        cols="30"
+                        rows="10"
+                        class="textarea"
+                        placeholder="Type your codes here"
+                        v-model="codes"
+                        v-on:input="changeUrl()"
+                    ></textarea>
+                    <p>URL:</p>
+                    <input
+                        type="text"
+                        class="input"
+                        v-model="url"
+                    />
+                    <button class="button" v-on:click="makeQrCode">Get QRCode</button>
+                    <div id="qrcode"></div>
+                </div>
+            </main>
+            <footer></footer>
+        </div>
+    </body>
+</html>
